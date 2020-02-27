@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var imageView: UIImageView!
-    
+    //status değişip duracağı için var kullanıyoruz tanımlarken
+    var imageStatus = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +26,15 @@ class ViewController: UIViewController {
     @IBAction func changeButton(_ sender: Any) {
         
         
-        if  imageView.image == UIImage (named :"galaxy1"){
+        if  imageStatus == true {
             imageView.image = UIImage (named :"galaxy2")
-            titleLabel.text = "Galaxy 2"
+            titleLabel.text = "Second Galaxy"
+            imageStatus = false
        
         } else {
             imageView.image = UIImage (named :"galaxy1")
-            titleLabel.text = "Galaxy 1"
+            titleLabel.text = "First Galaxy"
+            imageStatus = true
           
         }
         
